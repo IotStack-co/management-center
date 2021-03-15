@@ -33,7 +33,7 @@ const NewsletterPopup = () => {
 
 	const subscribeNewsletter = async (email) => {
 		try {
-			const response = await fetch(`http://${window.location.hostname}:8088/api/newsletter/subscribe`, {
+			const response = await fetch(`${window.location.protocol}://${window.location.hostname}:${window.location.port}/api/newsletter/subscribe`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

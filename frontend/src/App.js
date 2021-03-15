@@ -234,7 +234,7 @@ export default function App(props) {
 	const [value, setValue] = React.useState('recents');
 	const [darkMode, setDarkMode] = useLocalStorage('cedalo.managementcenter.darkMode');
 	// TODO: make URL relative
-	const [response, loading, hasError] = useFetch(`http://${window.location.hostname}:8088/api/theme`);
+	const [response, loading, hasError] = useFetch(`${window.location.protocol}://${window.location.hostname}:${window.location.port}/api/theme`);
 
 	if (hasError || response) {
 		let appliedTheme = darkMode === 'true' ? darkTheme : customTheme;
